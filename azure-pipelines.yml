@@ -13,9 +13,8 @@ pool:
   vmImageName: 'ubuntu-latest'
 
 steps:
-- task: Docker@2
+- task: HelmInstaller@0
   inputs:
-    command: 'build'
-    Dockerfile: 'app/Dockerfile'
-    repository: $(imageName)
+    helmVersion: '2.14.1'
+    installKubectl: true
 
